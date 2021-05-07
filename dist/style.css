@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    background-color: #cdeed3;
+
+}
+
+header {
+    margin-top: 40px;;
+    text-align: center;
+}
+
+.container-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+  
+
+}
+
+.form-input{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+input{
+    height: 36px;
+    border: 2px solid #353535;
+    background-color: #fefff1;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    
+}
+
+input[type='text']{
+    outline: none;
+    text-align: center;
+    cursor: text;
+}
+
+.input_area{
+    font-size: 20px;
+}
+
+i{
+    font-size: 18px;
+}
+
+button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fefff1;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.geo-btn{
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.geo-btn > p{
+    visibility: hidden;
+    font-size: 0.1px;
+    transition: visibility 0.5s ease;
+}
+
+.geo-btn:hover > p{
+    transition: all 0.5s ease;
+    visibility: visible;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline;
+}
+
+.geo-btn:hover{
+    width:250px;
+    border-radius: 30px;
+    transition: width 0.5s ease;
+
+
+}
+
+
+button:hover{
+    background-color: #89c3f3;
+}
+
+
+.weather-box{
+    text-align: center;
+    margin-top: 20px;
+    width: 80%;
+}
+
+
+.searched-city{
+    margin-top: 20px;
+    color:red;
+}
+
+.error-box{
+    color:red;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.aqi-container{
+    width: 150px;
+    margin-top: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 18px;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size: 20px;
+   
+}
+
+.result-box{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.description-box{
+    margin-top: 10px;
+    font-size: 20px;
+
+}

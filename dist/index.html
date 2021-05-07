@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous"
+  />    <title>Air checker</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Air checker</h1>
+      
+    </header>
+
+    <div class="container-main">
+      <h2>Verifica il livello di inquinamento della tua città</h2>
+      <form class="form-input">
+        <input class="input_area" placeholder="Cerca" type="text">
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+
+        </button>
+        <button class="geo-btn">
+          <i class="fas fa-map-marker-alt"></i>
+
+          <p id="scrit">Usa la geolocalizzazione</p>
+
+        </button>
+
+      </form>
+
+      <div class="weather-box">
+
+      </div>  
+    </div>
+    
+    <script defer src="main.js">
+
+     </script> 
+
+  </body>
+</html>
