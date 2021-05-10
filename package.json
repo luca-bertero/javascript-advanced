@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "dotenv-webpack": "^7.0.2",
+    "lodash": "^4.17.21",
     "webpack": "^5.36.2"
   },
   "devDependencies": {

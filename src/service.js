@@ -1,4 +1,5 @@
 import {colorArray, result, description } from "./view.js"
+import _ from "lodash";
 
 const apitoken = process.env.API_TOKEN;
 const inputarea = document.querySelector(".input_area");
@@ -39,7 +40,7 @@ function searchGeo(event) {
     position => {
       var pos = "geo:" + position.coords.latitude + ";"
       + position.coords.longitude;
-  
+
   var url = "https://api.waqi.info/feed/" + pos +"/?token=" + apitoken;
   fetch(url)
   .then(result => result.json())
@@ -62,13 +63,13 @@ function MsgError(error){
 }
 
 function generateError(error){
-  
+
   const errorMsg = document.createElement("div");
   errorMsg.classList.add("error-box");
   container.appendChild(errorMsg);
-  
+
   errorMsg.innerText = "ERRORE \n" + error;
-  
+
 }
 
 function Dom(data){
@@ -83,9 +84,8 @@ function cleanDOM() {
 }
 
 function changeDOM(info){
-
-  var aqi = info.data.aqi;
-  var city_name = info.data.city.name;
+  var aqi = _.get(info.data, "aqi", 0);
+  var city_name = _.get(info.data.city, "name", "Roma");
 
   genElementDOM(aqi,city_name);
 }
@@ -96,17 +96,17 @@ function genElementDOM(aqi,city_name){
   const city_box = document.createElement("div");
   city_box.classList.add("city-container");
   container.appendChild(city_box);
-  
+
   //div aqi-box
   const aqi_box = document.createElement("div");
   aqi_box.classList.add("aqi-container");
   container.appendChild(aqi_box);
-  
+
   //city name
   const cityH = document.createElement("h2");
   cityH.textContent = city_name;
   city_box.appendChild(cityH);
-  
+
   //paragraph for display aqi value
   const aqi_p = document.createElement("p")
   aqi_p.textContent="AQI value: " + aqi;
@@ -126,7 +126,7 @@ function genElementDOM(aqi,city_name){
 }
 
 function styleDom(aqi_value,aqi_box,result_box,description_box){
-  
+
   switch(true){
 
     case aqi_value <= 50:
@@ -134,7 +134,7 @@ function styleDom(aqi_value,aqi_box,result_box,description_box){
       result_box.innerHTML = result[0];
       description_box.innerHTML = description[0];
     break;
-    
+
     case aqi_value <= 100:
       aqi_box.style.background = colorArray[1];
       result_box.innerHTML = result[1];
@@ -158,7 +158,7 @@ function styleDom(aqi_value,aqi_box,result_box,description_box){
       result_box.innerHTML = result[4];
       description_box.innerHTML = description[4];
     break;
-    
+
     case aqi_value > 300:
       aqi_box.style.background = colorArray[5];
       result_box.innerHTML = result[5];
@@ -172,7 +172,5 @@ function styleDom(aqi_value,aqi_box,result_box,description_box){
     break;
 
   }
-  
+
 }
-
-
